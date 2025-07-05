@@ -1,5 +1,5 @@
 * {
-  /* outline: 1px solid red; */
+  outline: 1px solid red;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,6 +16,8 @@
 
 #header {
   grid-area: header;
+  display: grid;
+  grid-template-rows: 1fr 2fr;
 }
 
 #sidebar {
@@ -26,6 +28,92 @@
 
 #main-content {
   grid-area: main-content;
+  background-color: lightgrey;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "your-projects your-projects announcements"
+    "your-projects your-projects announcements"
+    "your-projects your-projects announcements"
+    "your-projects your-projects trending"
+    "your-projects your-projects trending"
+    "your-projects your-projects trending";
+  gap: 5px;
+}
+
+.your-projects {
+  grid-area: your-projects;
+}
+
+#announcements {
+  grid-area: announcements;
+}
+
+#trending {
+  grid-area: trending;
+}
+
+#project-cart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  margin: 5px;
+  gap: 5px;
+}
+
+.project-cart {
+  background: linear-gradient(90deg, yellow 0%, white 7%);
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+.project-cart-icons {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+#announcement-cart {
+  background: white;
+  padding: 30px 20px;
+  border-radius: 5px;
+}
+
+#trending-cart-container {
+  background: white;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 5px;
+}
+
+#trending-cart {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "avatar-picture heading-5"
+    "avatar-picture paragraph-trending";
+  background: white;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#trending-picture {
+  grid-area: avatar-picture;
+  align-self: center;
+  justify-self: center;
+}
+
+#heading-5 {
+  grid-area: heading-5;
+}
+
+#paragraph-trending {
+  grid-area: paragraph-trending;
 }
 
 #sidebar-start > img {
@@ -52,4 +140,89 @@
 #sidebar-middle,
 #sidebar-end {
   margin-top: 30px;
+}
+
+#header-end {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+#header-start-left {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+#header-start-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+}
+
+#header-end-left {
+  display: grid;
+  grid-template-areas:
+    "avatar-picture paragraph"
+    "avatar-picture heading-1";
+  align-items: center;
+  column-gap: 15px;
+}
+
+#avatar-picture {
+  grid-area: avatar-picture;
+  height: 80px;
+  width: 80px;
+}
+
+#paragraph {
+  grid-area: paragraph;
+}
+
+#heading-1 {
+  grid-area: heading-1;
+}
+
+#header-end {
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 50px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#header-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#header-end-right {
+  display: flex;
+  gap: 30px;
+}
+
+button {
+  background-color: aquamarine;
+  color: black;
+  font-size: medium;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+#input-field {
+  /* height: 25px; */
+  width: 300px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 1rem;
+  text-align: left;
+  margin-right: 25px;
+  text-align: left;
+  padding-left: 15px;
 }
